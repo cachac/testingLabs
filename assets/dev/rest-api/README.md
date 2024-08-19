@@ -1,1 +1,1 @@
-# public-api
+# Testing automation: rest-api
