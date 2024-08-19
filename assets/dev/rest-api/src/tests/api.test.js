@@ -14,7 +14,7 @@ test('delay', async () => {
   expect(res.statusCode).toEqual(200)
 })
 
-// TODO: descomentar para probar.
+// TODO: descomentar para forzar el error:
 // test('error400', async () => {
 //   const res = await api.get('/error400').send()
 //   expect(res.statusCode).toEqual(200)
