@@ -20,3 +20,4 @@
 6. loggin
 
 falco
+snyk
