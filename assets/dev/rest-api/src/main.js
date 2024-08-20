@@ -100,9 +100,3 @@ export const server = app.listen(config.NODE_PORT, () => {
     `[${config.NODE_ENV}] App: ${config.APP_NAME} v${config.APP_VERSION}. Session: ${sticky} 🚀 Server ready on Port ${config.NODE_PORT} - Express JS ${config.NODE_ENV}`
   )
 })
-
-app.listen(3080, () => {
-  logger.info(`/healthcheck on port 3080`)
-})
-
-export { app }

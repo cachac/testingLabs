@@ -1,8 +1,7 @@
 import supertest from 'supertest'
-import { app, server } from '../main.js'
-import config from '../config/index.js'
+import { server } from '../main.js'
 
-const api = supertest(app)
+const api = supertest(server)
 
 test('healthcheck', async () => {
   const res = await api.get('/healthcheck').send()
@@ -20,6 +19,7 @@ test('delay', async () => {
 //   expect(res.statusCode).toEqual(200)
 // })
 
-afterAll(() => {
+afterAll((done) => {
   server.close()
+  done()
 })
