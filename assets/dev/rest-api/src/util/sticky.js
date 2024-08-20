@@ -1,1 +1,4 @@
-export const sticky = (Math.random() + 1).toString(36).substring(10)
+import crypto from 'crypto'
+const num = crypto.randomUUID().slice(0, 3)
+
+export const sticky = num

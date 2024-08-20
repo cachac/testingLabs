@@ -65,3 +65,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+
+      - name: Get SonarCloud status
+        run: |
+          echo "SONAR_STATUS=$(curl -s -u ${{ secrets.SONAR_TOKEN}}: https://sonarcloud.io/api/qualitygates/project_status?projectKey=${{ secrets.SONAR_PROJECT_KEY }} | jq -r '.projectStatus.status')" >> $GITHUB_ENV
+
+      - name: Sonar Status
+        run: echo ${{ env.SONAR_STATUS }}
+
+      - name: Check Status
+        if: ${{ env.SONAR_STATUS == 'ERROR' }}
+        run: exit 1

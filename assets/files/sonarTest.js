@@ -27,3 +27,7 @@ console.log(getUserName());
 console.log(calculateAge(1990));
 console.log(calculateUserAge({ yearOfBirth: 1990 }));
 console.log(unsafeFunction("2 + 2")); // Potencial problema de seguridad
+
+export default {
+  unsafeFunction,
+};
