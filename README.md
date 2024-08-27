@@ -7,24 +7,27 @@
 # 5. [Automatización de análisis CVE's](./05.Automatización%20de%20análisis%20CVE.md)
 # 6. [SAST vs DAST](./06.%20Deployment%20DAST.md)
 # 7. [Load Testing](./07.%20Load%20Testing.md)
+# 8. [Deploy Kubernetes](./08.%20Deploy.md)
 
 # . Deploy and run
 
-2. selenium
-3. secrets
+
 deploy kubernetes (istio / api gateway / flagger ...)
-4. net pol
 
-5. monitoring
-6. logging
-7. falco: https://falco.org/blog/falco-driverkit-debian-docker/
-8. Final
+1. secrets
+2. net pol
 
 
-Revisión de configuraciones​
+
+3. monitoring
+4. logging
+5. falco: https://falco.org/blog/falco-driverkit-debian-docker/
+https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html
+1. Final
+
+
+
 
 Monitoreo (real time)​
-
 Logging (real time)​
 
-Alertas al SOC
