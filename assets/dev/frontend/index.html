@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+      body {
+        background-color: rgb(201, 183, 43);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        flex-direction: column;
+      }
+
+      .hello-world {
+        margin-top: 50px;
+        border: 2px solid white;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .kubernetes-logo {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg"
+      alt="Kubernetes Logo"
+      class="kubernetes-logo"
+    />
+    <div class="hello-world"><p id="container-id">Loading...</p></div>
+
+    <script>
+      fetch("/container-id")
+        .then((response) => response.text())
+        .then((containerId) => {
+          document.getElementById("container-id").innerText = containerId;
+        })
+        .catch((error) => {
+          console.error("Error fetching container ID:", error);
+          document.getElementById("container-id").innerText =
+            "Error loading container ID";
+        });
+    </script>
+  </body>
+</html>
