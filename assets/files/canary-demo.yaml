@@ -14,12 +14,12 @@ spec:
   ingressRef:
     apiVersion: networking.k8s.io/v1
     kind: Ingress
-    name: http-ingress
+    name: demo-frontend-ingress
   # HPA reference (optional)
-  # autoscalerRef:
-  #   apiVersion: autoscaling/v2
-  #   kind: HorizontalPodAutoscaler
-  #   name: demo-frontend
+  autoscalerRef:
+    apiVersion: autoscaling/v2
+    kind: HorizontalPodAutoscaler
+    name: demo-frontend-hpa
 
   # the maximum time in seconds for the canary deployment
   # to make progress before it is rollback (default 600s)
@@ -36,7 +36,7 @@ spec:
     threshold: 10
     # max traffic percentage routed to canary
     # percentage (0-100)
-    maxWeight: 50
+    maxWeight: 70
     # canary increment step
     # percentage (0-100)
     stepWeight: 5
@@ -51,13 +51,10 @@ spec:
     # testing (optional)
     webhooks:
       - name: "flagger load test"
-        type: rollout
-        url: http://flagger-loadtester.default/
-        timeout: 3s
+        url: http://flagger-loadtester.demo/
+        timeout: 10s
         metadata:
-          cmd: "hey -z 120s -q 10 -c 2 http://demo-frontend-canary.default.svc.cluster.local:8080"
-
-# Hey
-# -z Tiempo de la prueba
-# -q Cantidad de hits
-# -c Usuarios concurrentes
+          type: cmd
+          cmd: "hey -z 2m -q 10 -c 2 http://carlos.kubelabs.dev/"
+          # ejemplo de tráfico interno
+          # cmd: "hey -z 120s -q 10 -c 2 http://demo-frontend-canary.demo.svc.cluster.local:8080"
