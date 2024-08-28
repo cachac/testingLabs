@@ -8,26 +8,15 @@
 # 6. [SAST vs DAST](./06.%20Deployment%20DAST.md)
 # 7. [Load Testing](./07.%20Load%20Testing.md)
 # 8. [Deploy Kubernetes](./08.%20Deploy.md)
+# 9. [Monitoring](./09.%20Monitoring.md)
 
-# . Deploy and run
-
-
-deploy kubernetes (istio / api gateway / flagger ...)
+# . opcional
 
 1. secrets
 2. net pol
-
-
-
-3. monitoring
-4. logging
 5. falco: https://falco.org/blog/falco-driverkit-debian-docker/
+security
 https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html
+
 1. Final
-
-
-
-
-Monitoreo (real time)​
-Logging (real time)​
 
