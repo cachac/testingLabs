@@ -11,7 +11,6 @@
 # 9. [Monitoring](./09.%20Monitoring.md)
 
 # . opcional
-
 1. secrets
 2. net pol
 5. falco: https://falco.org/blog/falco-driverkit-debian-docker/
