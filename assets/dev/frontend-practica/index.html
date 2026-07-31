@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dashboard App</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1>Dashboard</h1>
+        <div class="user-profile">
+          <div class="avatar"></div>
+          <span>Admin</span>
+        </div>
+      </header>
+      <main class="main-content">
+        <section class="card stats">
+          <h2>System Status</h2>
+          <div class="stat-grid">
+            <div class="stat-box">
+              <span class="stat-label">Uptime</span>
+              <span class="stat-value">99.9%</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">API Health</span>
+              <span class="stat-value pulse">Connected</span>
+            </div>
+          </div>
+        </section>
+        <section class="card data-section">
+          <h2>Recent Activity</h2>
+          <button id="fetch-btn" class="primary-btn">Fetch Data</button>
+          <div id="data-container" class="data-container">
+            <p class="placeholder-text">Click the button to fetch data from the API...</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
